@@ -2821,8 +2821,8 @@
       [ "bone", 10 ]
     ],
     [
-      [ "water", 1 ],
-      [ "water_clean", 1 ]
+      [ "water", 4 ],
+      [ "water_clean", 4 ]
     ]
   ]
 },{
@@ -2864,7 +2864,8 @@
   "tools": [ [ [ "surface_heat", 5, "LIST" ] ] ],
   "components": [
     [
-      [ "broth", 1 ]
+      [ "broth", 1 ],
+      [ "broth_bone", 1 ]
     ],
     [
       [ "mushroom", 4 ],
@@ -2901,7 +2902,8 @@
       [ "jar_glass", 1 ]
     ],
     [
-      [ "broth", 2 ]
+      [ "broth", 2 ],
+      [ "broth_bone", 2 ]
     ],
     [
       [ "mushroom", 8 ],
@@ -2942,7 +2944,8 @@
       [ "scrap", 1 ]
     ],
     [
-      [ "broth", 1 ]
+      [ "broth", 1 ],
+      [ "broth_bone", 1 ]
     ],
     [
       [ "mushroom", 4 ],

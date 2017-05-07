@@ -466,6 +466,7 @@
         "material" : "bone",
         "volume" : 1,
         "phase" : "liquid",
+        "charges" : 4,
         "flags" : ["EATEN_HOT"],
         "fun" : 10
     },
