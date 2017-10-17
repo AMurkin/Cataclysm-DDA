@@ -56,6 +56,44 @@
         "post_terrain" : "t_pit_spiked"
     },{
         "type" : "construction",
+        "description" : "Build Dressing-room",
+        "category" : "CONSTRUCT",
+        "required_skills" : [ [ "fabrication", 1 ] ],
+        "time" : 20,
+        "qualities": [ [
+            { "id": "CUT", "level": 1 },
+            { "id": "HAMMER", "level": 1 }
+        ] ],
+        "components" : [
+            [ [ "nail", 4 ], [ "pointy_stick", 2 ], [ "spike", 2 ] ],
+            [ [ "sheet", 2 ] ],
+            [ [ "stick", 1 ] ],
+            [ [ "withered", 12 ], [ "straw_pile", 12 ], [ "string_36", 1 ] ]
+        ],
+        "pre_special" : "check_empty",
+        "post_terrain" : "f_dressing_room"
+    },{
+        "type" : "construction",
+        "description" : "Build Dressing-room", "//": "Step 2: with a mirror and light",
+        "category" : "CONSTRUCT",
+        "required_skills" : [ [ "fabrication", 2 ] ],
+        "time" : 20,
+        "qualities": [ [
+            { "id": "CUT", "level": 1 },
+            { "id": "HAMMER", "level": 1 }
+        ] ],
+        "components" : [
+            [ [ "mirror", 1 ] ],
+            [ [ "flashlight", 1 ] ],
+            [ [ "nail", 4 ], [ "pointy_stick", 2 ], [ "spike", 2 ], [ "duct_tape", 10 ] ],
+            [ [ "sheet", 1 ] ],
+            [ [ "stick", 1 ] ],
+            [ [ "withered", 12 ], [ "straw_pile", 12 ], [ "string_36", 1 ] ]
+        ],
+        "pre_terrain" : "f_dressing_room",
+        "post_terrain" : "f_dressing_room_big"
+    },{
+        "type" : "construction",
         "description" : "Glass Pit",
         "category" : "DIG",
         "required_skills" : [ [ "survival", 1 ] ],

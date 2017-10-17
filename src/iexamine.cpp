@@ -2854,6 +2854,31 @@ void iexamine::reload_furniture(player &p, const tripoint &examp)
     p.moves -= 100;
 }
 
+void iexamine::dressing_room( player &p, const tripoint &examp )
+{
+
+    const auto &fr = g->m.furn( examp ).obj();
+    // What to do?
+    int choice = menu( true, _( "Do what with the dressing-room?" ),
+                       _( "Change clothes." ),
+                       _( "Cancel" ), NULL );
+    if( choice == 1 ) {
+        auto items = g->m.i_at( examp );
+        if ( items.empty() ) {
+            add_msg( m_info, _( "The dressing-room is empty!" ) );
+            return;
+        } else {
+            p.add_msg_if_player( "TODO: change clothes. (%s)", ( fr.id == "f_dressing_room_big" ) ? "big" : "regular" );
+            for( auto & itm : items ) {
+                p.add_msg_if_player( "item: %s (%s)", itm.typeId().c_str(), itm.get_layer() > 0 ? "cloth?" : "?" );
+            }
+        }
+        p.moves -= ( fr.id == "f_dressing_room_big" ) ? 500 : 1000;
+    } else {
+        p.add_msg_if_player( _( "Never mind." ) );
+    }
+}
+
 void iexamine::curtains(player &p, const tripoint &examp)
 {
     if (g->m.is_outside(p.pos())) {
@@ -3503,7 +3528,8 @@ iexamine_function iexamine_function_from_string(std::string const &function_name
         { "locked_object", &iexamine::locked_object },
         { "kiln_empty", &iexamine::kiln_empty },
         { "kiln_full", &iexamine::kiln_full },
-        { "climb_down", &iexamine::climb_down }
+        { "climb_down", &iexamine::climb_down },
+        { "dressing_room", &iexamine::dressing_room }
     }};
 
     auto iter = function_map.find( function_name );

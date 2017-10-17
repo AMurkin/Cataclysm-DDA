@@ -1044,6 +1044,62 @@
         }
     },{
         "type" : "furniture",
+        "id" : "f_dressing_room",
+        "name": "dressing room",
+        "symbol": "{",
+        "color": "ltgray",
+        "move_cost_mod": 2,
+        "required_str": -1,
+        "flags": ["ALLOW_FIELD_EFFECT", "CONTAINER", "EASY_DECONSTRUCT"],
+        "examine_action": "dressing_room",
+        "max_volume": 1000,
+        "deconstruct": {
+            "items": [
+                { "item": "sheet", "count": 2 },
+                { "item": "stick", "count": 1 }
+            ]
+        },
+        "bash": {
+            "str_min": 18, "str_max": 50,
+            "sound": "crunch!",
+            "sound_fail": "whump!",
+            "items": [
+                { "item": "sheet", "count": [1, 2] },
+                { "item": "stick", "count": [0, 1] }
+            ]
+        }
+    },{
+        "type" : "furniture",
+        "id" : "f_dressing_room_big",
+        "name": "dressing room",
+        "symbol": "{",
+        "color": "ltgray",
+        "move_cost_mod": 2,
+        "required_str": -1,
+        "flags": ["ALLOW_FIELD_EFFECT", "CONTAINER", "EASY_DECONSTRUCT"],
+        "examine_action": "dressing_room",
+        "max_volume": 3000,
+        "deconstruct": {
+            "items": [
+                { "item": "mirror", "count": 1 },
+                { "item": "flashlight", "count": 1 },
+                { "item": "sheet", "count": 3 },
+                { "item": "stick", "count": 2 }
+            ]
+        },
+        "bash": {
+            "str_min": 18, "str_max": 50,
+            "sound": "crunch!",
+            "sound_fail": "whump!",
+            "items": [
+                { "item": "mirror", "count": [0, 1] },
+                { "item": "flashlight", "count": [0, 1] },
+                { "item": "sheet", "count": [2, 3] },
+                { "item": "stick", "count": [1, 2] }
+            ]
+        }
+    },{
+        "type" : "furniture",
         "id" : "f_vending_c",
         "name": "vending machine",
         "symbol": "{",
