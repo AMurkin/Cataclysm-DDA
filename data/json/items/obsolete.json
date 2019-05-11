@@ -347,5 +347,12 @@
     "description": "When this bionic is active, you can burn nearly any organic material as fuel (use 'E'), recharging your power level.  Some materials will burn better than others.",
     "price": 450000,
     "difficulty": 4
+  },
+  {
+    "type": "COMESTIBLE",
+    "id": "dry_mushroom_magic",
+    "name": "dried hallucinogenic mushroom",
+    "copy-from": "dry_mushroom",
+    "description": "A hallucinogenic mushroom which has been dehydrated for storage.  Will still cause hallucinations if eaten."
   }
 ]
