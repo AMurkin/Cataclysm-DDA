@@ -52,7 +52,8 @@ template <typename E> struct enum_traits;
 namespace
 {
 
-generic_factory<achievement> achievement_factory("achievement");
+generic_factory<achievement> achievement_factory( "achievement" );
+
 
 } // namespace
 
