@@ -3218,16 +3218,22 @@ void apply_function( const string_id<map_extra> &id, map &m, const tripoint &abs
     if( get_option<bool>( "AUTO_NOTES" ) && get_option<bool>( "AUTO_NOTES_MAP_EXTRAS" ) ) {
 
         // Only place note if the user has not disabled it via the auto note manager
-        if( autoNoteSettings.has_auto_note_enabled( id ) ) {
-            const std::string mx_note =
-                string_format( "%s:%s;<color_yellow>%s</color>: <color_white>%s</color>",
-                               extra.get_symbol(),
-                               get_note_string_from_color( extra.color ),
-                               extra.name(),
-                               extra.description() );
-            // TODO: fix point types
-            overmap_buffer.add_note( tripoint_abs_omt( sm_to_omt_copy( abs_sub ) ), mx_note );
+        if( !autoNoteSettings.has_auto_note_enabled( id ) ) {
+            return;
         }
+
+        const cata::optional<auto_notes::custom_symbol> &symbol =
+            autoNoteSettings.get_custom_symbol( extra.id );
+        const std::string note_symbol = symbol ? ( *symbol ).get_symbol_string() : extra.get_symbol();
+        const nc_color note_color = symbol ? ( *symbol ).get_color() : extra.color;
+        const std::string mx_note =
+            string_format( "%s:%s;<color_yellow>%s</color>: <color_white>%s</color>",
+                           note_symbol,
+                           get_note_string_from_color( note_color ),
+                           extra.name(),
+                           extra.description() );
+        // TODO: fix point types
+        overmap_buffer.add_note( tripoint_abs_omt( sm_to_omt_copy( abs_sub ) ), mx_note );
     }
 }
 
